@@ -43,6 +43,8 @@ public:
     // Destructor
     ~BigInt() {
         // TODO: Implement if needed
+        // NO pointer to delete for now
+        cout << "Destructor called" << endl;
     }
 
     // Assignment operator
@@ -111,6 +113,7 @@ public:
     // Pre-decrement operator (--x)
     BigInt& operator--() {
         // TODO: Implement this operator
+        *this -= BigInt(1);
         return *this;
     }
 
@@ -118,6 +121,8 @@ public:
     BigInt operator--(int) {
         BigInt temp;
         // TODO: Implement this operator
+        temp = *this;
+        *this -= BigInt(1);
         return temp;
     }
 
