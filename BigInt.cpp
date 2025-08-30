@@ -37,7 +37,8 @@ public:
 
     // Copy constructor
     BigInt(const BigInt& other) {
-        // TODO: Implement this constructor
+        digits = other.digits;
+        isNegative = other.isNegative;
     }
 
     // Destructor
@@ -87,8 +88,8 @@ public:
 
     // Division assignment operator (x /= y)
     BigInt& operator/=(const BigInt& other) {
-        // TODO: Implement this operator
-        return *this;
+       *this = *this - other;
+       return *this;        
     }
 
     // Modulus assignment operator (x %= y)
@@ -99,15 +100,16 @@ public:
 
     // Pre-increment operator (++x)
     BigInt& operator++() {
-        // TODO: Implement this operator
-        return *this;
+       *this += BigInt(1);
+       return *this;  
     }
 
     // Post-increment operator (x++)
     BigInt operator++(int) {
-        BigInt temp;
-        // TODO: Implement this operator
-        return temp;
+       
+        BigInt temp = *this;
+        *this += BigInt(1);  
+         return temp;
     }
 
     // Pre-decrement operator (--x)
