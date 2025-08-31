@@ -37,7 +37,7 @@ public:
 
     // Copy constructor
     BigInt(const BigInt& other) {
-        digits = other.digits;
+        number = other.number;
         isNegative = other.isNegative;
     }
 
