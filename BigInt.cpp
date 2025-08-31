@@ -83,6 +83,7 @@ public:
     // Multiplication assignment operator (x *= y)
     BigInt& operator*=(const BigInt& other) {
         // TODO: Implement this operator
+        *this = *this * other;
         return *this;
     }
 
